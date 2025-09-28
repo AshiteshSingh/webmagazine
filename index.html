@@ -1385,8 +1385,30 @@ audio { display: none; }
 <div class="audio-player"><div class="audio-controls"><button class="play-btn" id="play-btn-9"><i class="fas fa-play"></i></button><div class="audio-info"><div class="audio-title">लालबहादुर शास्त्री : सादगी और सत्यनिष्ठा के प्रतीक</div><div class="progress-container"><span class="time-display" id="current-time-9">0:00</span><div class="progress-bar" id="progress-bar-9"></div><span class="time-display" id="duration-9">0:00</span></div></div></div></div><audio id="hindi-shastri-audio" src="https://media.redcircle.com/2025/9/28/8/17d373d9-5db3-44bf-8cac-987382c0a727_lalbhadur.mp3"></audio>
 <div class="animated-text" id="hindi-shastri-text"></div>
 </div>
+<div class="content-card featured-article">
+    <h3>My Home 30 Minutes Away from Home</h3>
+    <div class="author-credit">- Naisha Bhandari X-F</div>
+    
+    <div class="audio-player">
+        <div class="audio-controls">
+            <button class="play-btn" id="play-btn-19">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="audio-info">
+                <div class="audio-title">My Home 30 Minutes Away from Home</div>
+                <div class="progress-container">
+                    <span class="time-display" id="current-time-19">0:00</span>
+                    <div class="progress-bar" id="progress-bar-19"></div>
+                    <span class="time-display" id="duration-19">0:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="home-audio" src="https://media.redcircle.com/2025/9/28/13/9ef5cc5c-2981-4f89-9b01-1821e6fad248_my_home_30_minutes_away.mp3"></audio>
+    <div class="animated-text" id="home-away-text"></div>
 </div>
-</div>
+
 </section>
 <section class="content-section" id="ebulletin">
 <h2 class="section-title">E-Bulletin</h2>
@@ -1976,7 +1998,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setupFactAudioPlayer('satyagraha-audio', 'satyagraha-play-btn', 'satyagraha-progress-bar', 'satyagraha-current-time', 'satyagraha-duration', 'var(--gandhi-orange)'),
     setupFactAudioPlayer('legacy-audio', 'legacy-play-btn', 'legacy-progress-bar', 'legacy-current-time', 'legacy-duration', 'var(--gandhi-orange)'),
     setupFactAudioPlayer('god1-audio', 'god1-play-btn', 'god1-progress-bar', 'god1-current-time', 'god1-duration', 'var(--dussehra-red)'),
-    setupFactAudioPlayer('god2-audio', 'god2-play-btn', 'god2-progress-bar', 'god2-current-time', 'god2-duration', 'var(--dussehra-red)')
+    setupFactAudioPlayer('god2-audio', 'god2-play-btn', 'god2-progress-bar', 'god2-current-time', 'god2-duration', 'var(--dussehra-red)'),
+    setupAudioPlayer('home-audio', 'play-btn-19', 'progress-bar-19', 'current-time-19', 'duration-19')
   ].filter(p => p);
 
   // Defer heavy text-sync setup to prevent blocking initial render
@@ -1998,7 +2021,8 @@ document.addEventListener('DOMContentLoaded', function() {
       'karmayuddh-text': `कब तक कर्म को अपने तुम टालते रहोगे, कब तक जीवन के सुखी पल तुम काटते रहोगे? कब तक हार का तुम अभ्यास करते रहोगे? कब तक संसार के तानों को तुम सुनते रहोगे? कब तक अपने अवगुणों को बातों से भरते रहोगे? अरे! चल पड़ो उस राह पर जो ले चले आकाश पर, चुप बैठो तुम मत अब यहाँ इस दुनिया की आवाज़ पर। कर चलो नर्दन अपने कर्मों की आवाज़ से, मत दबो समाज के इस कटाक्षों के दबावों से। कर चलो कुछ ऐसा लोग जल उठें जलन से, लड़ चलो इस दुनिया के स्वार्थी चलन से। दिखा दो उनको तुम कोई गुजरा हुआ वक्त नहीं, जान जाएँ सब कि तुम-sa न कोई शख्स कहीं। हार मानना न तुम इस पथ पर चलते समय कभी, केशव को याद रखना तुम हारोगे न फिर कभी। घोर विपदाओं का समय अब छा गया है, घोर विपदाओं का समय अब छा गया है। लड़ने को तैयार हो, युद्ध का वक्त आ गया है। युद्ध का वक्त आ गया है।`,
       'poem-text': `They did not lead with power, they led with presence. They did not sit on thrones, they knelt in silence. A rosary… a spinning wheel… threads and thorns, patience and prayer. She loved in silence, he fasted in truth. She bore the hidden flame, he bore the steadfast light. Without lifting a weapon, without raising a voice, they changed the world. Without pride, without noise, they changed the world. Their lives were answers, not arguments. Their days were prayers, not proclamations. Their steps were songs, not speeches. And in the hush they left behind, we still find— the fragrance of faith, the whisper of hope, the eternal shape of love.`,
       'hindi-poem-text': `विश्वास तुम जन मन के तुमने संघर्ष चुना, तुमने चुना नेह, जन - जन का। तुम बने आत्मबल तुमने लौटाई आत्मा, भारत की.... तुमने माना अहिंसा परमो धर्म:। जब लगी थी दृष्टि सम्पूर्ण विश्व की, तुम लगे जागरण से, तुम लगे विश्वास से, तुम जाग पड़े आत्माओं में, तुम बन गए, न्याय सबके मन के। वो दुर्बल सी काया, पर विश्वास बड़ा था, वो आधी धोती, पर उसका विस्तार बड़ा था, तुम्हारी लाठी की आवाज़ में आदर्श का पहरा खड़ा था, तुमने जो कहा, किया.... आत्मा कीतल गहराइयों तक। स्वातंत्र्य की सुगंध घनीभूत थी, राहों में दांडी, और मन में करके मरने की चाह, कर्म बड़े और छोटी सी काया, उन झुर्रियों में अनुभव और दृढ़ संकल्प समाया था। तुम मन हो तुम जन हो तुम आत्मा हो तुम भरत सरीखे भारत के अग्रदूत है नमन तुम्हें, हे बापू! तुम जन मन के विश्वास बने तुम जन- जन के।`,
-      'idea-text': `For forty–two years, you’ve stood so tall,For forty–two years, you’ve stood so tall,A cradle of dreams, embracing all.Not just a building of brick and stone,But a family, a place we call home.Since childhood days, your arms held tight,Guiding our steps toward the light.Each classroom whispers stories old,Of lessons learned, of courage bold.Your walls have seen our laughter rise,Our silent tears, our hopeful eyes.They’ve kept our secrets, shared our song And pushed our little hearts along.Teachers here are more than guides,They walk with us through life’s tides.With patience deep and hearts so kind,They shaped our souls, they freed our mind.The playground echoes with endless cheer,The sound of childhood still rings clear.Every corner, every hall,Holds a piece of us, holds it all Now as Class XII, we stand and see,How much you’ve truly meant to me.You’re not just a school, but a sacred flower,Blooming with love, with grace, with power.`
+      'idea-text': `For forty–two years, you’ve stood so tall,For forty–two years, you’ve stood so tall,A cradle of dreams, embracing all.Not just a building of brick and stone,But a family, a place we call home.Since childhood days, your arms held tight,Guiding our steps toward the light.Each classroom whispers stories old,Of lessons learned, of courage bold.Your walls have seen our laughter rise,Our silent tears, our hopeful eyes.They’ve kept our secrets, shared our song And pushed our little hearts along.Teachers here are more than guides,They walk with us through life’s tides.With patience deep and hearts so kind,They shaped our souls, they freed our mind.The playground echoes with endless cheer,The sound of childhood still rings clear.Every corner, every hall,Holds a piece of us, holds it all Now as Class XII, we stand and see,How much you’ve truly meant to me.You’re not just a school, but a sacred flower,Blooming with love, with grace, with power.`,
+      'home-away-text': `मेरा नन्हा हाथ थाम कर, माँ-पापा ने मुझे स्कूल के गेट पर छोड़ दिया। आँख से टपका आँसू, क्लासरूम के फ़र्श पर जा गिरा। घबराहट, बेचैनी... एक अनजान जगह और कई अनजान चेहरे। "अंदर आओ बेटा," एक कोमल सी आवाज़ ने अपने पास बुलाया देख के। Beyond alphabets and numbers, beyond the introduction.. , came teachings of kindness, friendships, and compassion. From a simple grip on a pencil to the courage to stand up on my own, From a simple 'good morning' to navigating the world's unknowns. वही कोमल आवाज़ ने फटकारा, उसी ने प्रेम से पास बुला कर पुचकारा। जिन हाथों ने पोंछे मेरे आँसू, उसी ने तोड़ा मेरा अहम्। वो डाँट मेरे लिए एक दीक्षा थी, हर कड़वी बात में छिपी शिक्षा थी। जिसने जीवन की सही राह दिखाई, और सच्चे ज्ञान की पहचान कराई। A single gaze, both to correct and console, The same warmth that mended my broken soul. It judged my every flaw, with a stern, guiding hand, Teaching me to be both proud and humble in this land. For in that gaze, a mirror I could see, Reflecting who I was, and who I'd come to be. उस डाँट और पुचकार ने ही, आज मुझे इंसान बनाया। उस आवाज़ और उन आँखों ने, हर ग़लती पर सँवारा। शिक्षक तो बस एक नाम है, असल में, घर से तीस मिनट दूर, अपना एक नया घर पाया है। हाँ घर से तीस मिनट दूर, अपना एक नया घर पाया है।`
   };
 
   // Add text synchronization for articles and poems
@@ -2020,7 +2044,8 @@ document.addEventListener('DOMContentLoaded', function() {
     { audioId: 'karmayuddh-audio', textId: 'karmayuddh-text' },
     { audioId: 'hindi-article-audio', textId: 'hindi-article-text' },
     { audioId: 'poem-audio', textId: 'poem-text' },
-    { audioId: 'forever-home-audio', textId: 'idea-text' }
+    { audioId: 'forever-home-audio', textId: 'idea-text' },
+    { audioId: 'home-audio', textId: 'home-away-text' }
   ];
 
   // Setup text synchronization for each audio-text pair
