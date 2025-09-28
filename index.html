@@ -136,29 +136,6 @@ body {
     background: url('') center center/cover;
     background-attachment: fixed;
 }
-
-/* Custom Backgrounds for Each Section */
-#articles {
-    background: url('YOUR_ARTICLES_BACKGROUND_URL') center center/cover;
-    background-attachment: fixed;
-    background-blend-mode: overlay;
-}
-
-#ebulletin {
-    background: url('https://i.ibb.co/C39Vnyj3/Whats-App-Image-2025-09-27-at-18-54-09-e82f9846.jpg') center center/cover;
-    background-attachment: fixed;
-}
-
-#poems {
-    background: url('YOUR_POEMS_BACKGROUND_URL') center center/cover !important;
-    background-attachment: fixed !important;
-}
-
-#paintings {
-    background: url('YOUR_PAINTINGS_BACKGROUND_URL') center center/cover;
-    background-attachment: fixed;
-}
-
 .back-to-home {
     position: sticky;
     top: 20px;
@@ -1162,6 +1139,38 @@ audio { display: none; }
     color: var(--text-white);
 }
 
+/* Full screen backgrounds for each section */
+#articles::before,
+#ebulletin::before, 
+#poems::before,
+#paintings::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+#articles::before {
+    background-image: url('YOUR_ARTICLES_BACKGROUND_URL');
+}
+
+#ebulletin::before {
+    background-image: url('https://i.ibb.co/C39Vnyj3/Whats-App-Image-2025-09-27-at-18-54-09-e82f9846.jpg');
+}
+
+#poems::before {
+    background-image: url('YOUR_POEMS_BACKGROUND_URL');
+}
+
+#paintings::before {
+    background-image: url('YOUR_PAINTINGS_BACKGROUND_URL');
+}  
 </style>
 </link></link></head>
 <body>
