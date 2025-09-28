@@ -437,11 +437,20 @@ audio { display: none; }
 .animated-text { display: none; }
 .animated-text.active { display: block; }
 .poem-text span, .animated-text span { display: inline-block; opacity: 0.5; transform: translateY(0); transition: all 0.3s ease; color: inherit; }
-.poem-text span.visible, .animated-text span.visible { opacity: 1; color: var(--accent-blue); text-shadow: 1px 1px 3px rgba(62, 146, 204, 0.5); font-weight: 500; }
+.poem-text span.visible, .animated-text span.visible {
+    opacity: 1;
+    color: #1e3a8a; /* Deep blue instead of var(--accent-blue) */
+    text-shadow: 1px 1px 3px rgba(30, 58, 138, 0.5); /* Matching shadow for deep blue */
+    font-weight: 600; /* Slightly bolder */
+    font-size: 1.1em; /* Larger font size */
+}
 .video-card .poem-text { color: rgba(255, 255, 255, 0.98); font-weight: 500; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95); }
 .video-card .poem-text span { color: rgba(255, 255, 255, 0.7); }
-.video-card .poem-text span.visible { color: var(--accent-blue); text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95), 1px 1px 3px rgba(62, 146, 204, 0.8); }
-
+.video-card .poem-text span.visible {
+    color: #1e3a8a; /* Deep blue */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95), 1px 1px 3px rgba(30, 58, 138, 0.8);
+    font-size: 1.1em; /* Larger font size */
+}
 /* Grid Layouts */
 .article-list, .content-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
 .paintings-grid {
