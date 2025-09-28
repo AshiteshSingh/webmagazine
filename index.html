@@ -132,31 +132,53 @@ body {
 
 /* Main Content Area (Second Page) */
 .main-content {
-    padding: 4rem 2.5rem;
-    background: url('YOUR_DEFAULT_BACKGROUND_URL') center center/cover;
-    background-attachment: fixed;
+    padding: 0;
+    background: transparent;
 }
 
-/* Custom Backgrounds for Each Section */
-#articles {
-    background: url('https://i.ibb.co/9kkfcsfg/Whats-App-Image-2025-09-27-at-09-19-08-701c020e.jpg') center center/cover;
+/* Full viewport backgrounds for each section */
+#articles, #ebulletin, #poems, #paintings {
     background-attachment: fixed;
-    background-blend-mode: overlay;
+    min-height: 100vh;
+    padding: 4rem 2.5rem;
+    margin: 0;
+    position: relative;
+}
+
+/* Override container limitations */
+.container {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override section-specific containers */
+.ebulletin-section,
+.therese-comprehensive,
+.gandhi-comprehensive {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    max-width: none !important;
+}
+
+/* Individual section backgrounds */
+#articles {
+    background: url('https://i.ibb.co/hFNNG7Lq/Whats-App-Image-2025-09-27-at-09-19-08-47a01db0.jpg') center center/cover;
 }
 
 #ebulletin {
-    background: url('https://i.ibb.co/6ct7p713/Whats-App-Image-2025-09-27-at-09-19-08-7be12455.jpg') center center/cover;
-    background-attachment: fixed;
+    background: url('YOUR_EBULLETIN_BACKGROUND_URL') center center/cover;
 }
 
 #poems {
-    background: url('https://i.ibb.co/hFNNG7Lq/Whats-App-Image-2025-09-27-at-09-19-08-47a01db0.jpg') center center/cover !important;
-    background-attachment: fixed !important;
+    background: url('YOUR_POEMS_BACKGROUND_URL') center center/cover;
 }
 
 #paintings {
     background: url('YOUR_PAINTINGS_BACKGROUND_URL') center center/cover;
-    background-attachment: fixed;
 }
 .back-to-home {
     position: sticky;
