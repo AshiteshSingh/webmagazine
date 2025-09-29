@@ -1360,13 +1360,6 @@ audio { display: none; }
 
         <!-- Hindi Articles -->
         <div class="content-card featured-article">
-<h3>लतीफा</h3>
-<div class="author-credit">-आश्रय सिंह 11 B</div>
-<div class="audio-player"><div class="audio-controls"><button class="play-btn" id="play-btn-13"><i class="fas fa-play"></i></button><div class="audio-info"><div class="audio-title">लतीफा</div><div class="progress-container"><span class="time-display" id="current-time-13">0:00</span><div class="progress-bar" id="progress-bar-13"></div><span class="time-display" id="duration-13">0:00</span></div></div></div></div><audio id="latifa-audio" src="https://media.redcircle.com/2025/9/26/2/09eb274e-2654-43bd-92f8-d5b8ba0abe50_numbikaras.mp3"></audio>
-<div class="animated-text" id="latifa-text"></div>
-</div>
-
-        <div class="content-card featured-article">
 <h3>हमारा जीवन, एक रणभूमि</h3>
 <div class="author-credit">-Anshika Mauryer XIC</div>
 <div class="audio-player"><div class="audio-controls"><button class="play-btn" id="play-btn-16"><i class="fas fa-play"></i></button><div class="audio-info"><div class="audio-title">हमारा जीवन, एक रणभूमि</div><div class="progress-container"><span class="time-display" id="current-time-16">0:00</span><div class="progress-bar" id="progress-bar-16"></div><span class="time-display" id="duration-16">0:00</span></div></div></div></div><audio id="ranbhumi-audio" src="https://media.redcircle.com/2025/9/28/8/dcc83fcd-27ca-4f1d-840b-147caa5498fb_ranbhumi.mp3"></audio>
@@ -2024,7 +2017,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setupAudioPlayer('peach-tree-audio', 'play-btn-10', 'progress-bar-10', 'current-time-10', 'duration-10'),
     setupAudioPlayer('echoes-audio', 'play-btn-11', 'progress-bar-11', 'current-time-11', 'duration-11'),
     setupAudioPlayer('hindi-poem-2-audio', 'play-btn-12', 'progress-bar-12', 'current-time-12', 'duration-12'),
-    setupAudioPlayer('latifa-audio', 'play-btn-13', 'progress-bar-13', 'current-time-13', 'duration-13'),
     setupAudioPlayer('flowerite-audio', 'play-btn-14', 'progress-bar-14', 'current-time-14', 'duration-14'),
     setupAudioPlayer('unspoken-audio', 'play-btn-15', 'progress-bar-15', 'current-time-15', 'duration-15'),
     setupAudioPlayer('ranbhumi-audio', 'play-btn-16', 'progress-bar-16', 'current-time-16', 'duration-16'),
@@ -2051,7 +2043,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Defer heavy text-sync setup to prevent blocking initial render
   const textContents = {
-      'latifa-text': `एक कस्बे में नींबू से रस निकालने की प्रतियोगिता आयोजित थीं. एक एक कर कई पहलवानों ने ज़ोर आजमाइश की और पूरी नींबू निचोड़ डाला. तभी अनाउंस हुआ कि हैं कोई माई का लाल जो इस निचोड़े गये नींबू से एक बूंद भी रस निकाल दें, उसे दस हज़ार का ईनाम दिया जाएगा. यह सुनते ही पास खड़ी भीड़ से एक दुबला पतला युवक आया और प्रतियोगिता में शामिल होने की इच्छा व्यक्त की तथा हाथ में नींबू लेकर एक साथ 10-12 बूंद रस निकाल दिया. ये देख कर पहलवानों ने पूछा कि ईनाम की छोड़ो, वो भी मिलेगा, पहले ये बताओ कि तुम करते क्या हो ? उस युवक ने शांत हो कर बोला, मैं ट्रेन में चने बेचता हूँ`,
       'flowerite-text': `from tiny buds to blossoms bright voe grew with love, we found our light. Little Flower taught us to care, To dream, to lead to always share. It built our courage, shaped our voice Made hard work shine and hope our choice in every walk, in all we do, In flowerite blooms - forever True!`,
       'unspoken-text': `(Red theme) If I bring you earrings, lovely and bright, Will you wear them and glow in the light? There's something I wish to share with you, Will you pause for a moment, and hear me through? Your voice is like music, so soft and clear, Will you sing me a tune that I long to hear? I sulk over small things, like clouds in the sky, Will you bring me back with just one sigh? People leave, like whispers in the wind, Will you stay when others rescind? I watched the sun set, its colors ablaze, Will you walk with me through those fading rays? If I come with joy, will you share in my cheer? If I'm lost in sorrow, will you still be near? When tears from your eyes begin to fall, Will my shoulder be your comfort call? In a garden of roses, you're the white so rare, Why your smile makes everything else disappear? When the world around us begins to blur, Will your light still be the one I prefer? The henna on your hands, a beautiful hue, Will you show my name, when I ask you? Your hair, so lovely, it makes me smile, Will you let me play with it for a while?`,
       'ranbhumi-text': `हम पथिक नहीं जो थक जाएँ हम नदियाँ नहीं जो रुक जाएँ हर चुनौती के सम्मुख, बस लड़ना हमारा काम है आँधियों से क्या डरना, तूफानों से क्यों झुकना । जब मंजिल की चाह हो तो हर बाधा से जूझना जीत या हार की परवाह नहीं, बस साहस से आगे बढ़ना हर एक घाव को भर देना; और फिर से उठकर लड़ना । वो डर नहीं जो हमें डराए, वो निराशा नहीं जो हमें रुलाए । हर एक कदम नया हौसला, और नई पहचान बनाए। पहाड़ों से टकराकर भी, रास्ता बना कर चलना है। गिरकर भी, धूल झाड़कर, फिर से उठकर लड़ना है । क्योंकि यह जीवन एक रणभूमि है, जहाँ हर पल अग्नि परीक्षा है। और हम योद्धा हैं, जो अपने संकल्प से, हर एक अँधेरी रात को रौशन करे। हार भी हो तो क्या, वो हमें और मज़बूत करेगी । नया संकल्प देगी, नई ऊर्जा देगी। इसी राह पर चलते-चलते, एक दिन जीत हासिल होगी। पर अगर ना भी हो, तो भी हम कहेंगे, लड़ना हमारा काम है क्योंकि जीवन सिर्फ़ पाने का नहीं, बल्कि डटे रहने का नाम है। इस संग्राम में हर एक साँस, हमारे साहस का पैगाम है जब तक जान है, जब तक आस है. तब तक यह लड़ाई जारी रहेगी और यह बात हर जुबाँ पर, सदियों तक याद रहेग क्योंकि, यह कोई खेल नहीं यह तो जीवन का विधान है और इसमें हर एक योद्धा को अपना कर्म निभाना है लड़ना हमारा काम है`,
@@ -2076,7 +2067,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add text synchronization for articles and poems
   const textSyncElements = [
-    { audioId: 'latifa-audio', textId: 'latifa-text' },
     { audioId: 'flowerite-audio', textId: 'flowerite-text' },
     { audioId: 'unspoken-audio', textId: 'unspoken-text' },
     { audioId: 'ranbhumi-audio', textId: 'ranbhumi-text' },
