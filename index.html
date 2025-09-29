@@ -1964,45 +1964,63 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // **OPTIMIZED** Text Synchronization Function
-  const setupAudioText = (container, audio, textContent) => {
-    if (!container || !audio) return;
-    
-    const rawText = textContent || container.textContent;
-    if (!rawText) return;
-    const words = rawText.trim().split(/\s+/);
-    container.innerHTML = words.map(word => `<span class="word-span">${word}</span>`).join(' ');
-    const spans = container.children;
-    
-    const updateText = () => {
-      if (!audio.duration || isNaN(audio.duration) || spans.length === 0) return;
-      const timePerWord = audio.duration / spans.length;
-      const currentWordIndex = Math.floor(audio.currentTime / timePerWord);
-      
-      for (let i = 0; i < spans.length; i++) {
-        spans[i].classList.toggle('visible', i <= currentWordIndex);
+ // Build synchronized text while preserving stanza breaks
+const setupAudioText = (container, audio, textContent) => {
+  if (!container || !audio) return;
+
+  const rawText = textContent || container.textContent;
+  if (!rawText) return;
+
+  // Preserve spaces AND newlines, then convert \n to <br> while keeping word spans
+  const tokens = rawText.replace(/\r\n/g, '\n').trim().split(/(\s+)/);
+  container.innerHTML = tokens.map(t => {
+    if (t === '\n') return '<br>';
+    if (/^\s+$/.test(t)) return t.replace(/\n/g, '<br>');
+    return `<span class="word-span">${t}</span>`;
+  }).join('');
+
+  const spans = container.children;
+
+  const updateText = () => {
+    if (!audio.duration || isNaN(audio.duration) || spans.length === 0) return;
+    const timePerWord = audio.duration / spans.length;
+    const currentWordIndex = Math.floor(audio.currentTime / timePerWord);
+    for (let i = 0; i < spans.length; i++) {
+      // Only toggle on span elements; ignore <br> nodes rendered in innerHTML
+      const el = spans[i];
+      if (el.tagName === 'SPAN') {
+        el.classList.toggle('visible', i <= currentWordIndex);
       }
-    };
-
-    audio.addEventListener('play', () => {
-      if (container.classList.contains('animated-text')) container.classList.add('active');
-    });
-
-    audio.addEventListener('timeupdate', updateText);
-    audio.addEventListener('seeked', updateText);
-    
-    audio.addEventListener('ended', () => {
-      for (let i = 0; i < spans.length; i++) { spans[i].classList.add('visible'); }
-      setTimeout(() => {
-        if(container) { // Check if container still exists
-            Array.from(spans).forEach(span => span.classList.remove('visible'));
-            if (container.classList.contains('animated-text')) container.classList.remove('active');
-        }
-      }, 1500);
-    });
-
-    // Initial state
-    updateText();
+    }
   };
+
+  audio.addEventListener('play', () => {
+    if (container.classList.contains('animated-text')) {
+      container.classList.add('active');
+    }
+  });
+
+  audio.addEventListener('timeupdate', updateText);
+  audio.addEventListener('seeked', updateText);
+
+  audio.addEventListener('ended', () => {
+    for (let i = 0; i < spans.length; i++) {
+      const el = spans[i];
+      if (el.tagName === 'SPAN') el.classList.add('visible');
+    }
+    setTimeout(() => {
+      Array.from(spans).forEach(el => {
+        if (el.tagName === 'SPAN') el.classList.remove('visible');
+      });
+      if (container.classList.contains('animated-text')) {
+        container.classList.remove('active');
+      }
+    }, 1500);
+  });
+
+  // Initial state
+  updateText();
+};
   
     // Store all audio elements and their original states
     const allAudioElements = Array.from(document.querySelectorAll('audio'));
