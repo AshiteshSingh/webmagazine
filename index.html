@@ -1360,8 +1360,28 @@ audio { display: none; }
   <audio id="forever-home-audio" src="https://media.redcircle.com/2025/9/26/12/0d614322-aded-4e01-929f-a99bd1012ac3_luvvoice.com-20250926-u0sash.mp3"></audio>
   <div class="animated-text" id="idea-text"></div>
 </div>
+  <div class="content-card featured-article">
+  <h3>Discipline</h3>
+  <div class="author-credit">- Savio Samson Khalkho — V E</div>
 
-        <!-- Hindi Articles -->
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button class="play-btn" id="play-btn-25"><i class="fas fa-play"></i></button>
+      <div class="audio-info">
+        <div class="audio-title">Discipline</div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time-25">0:00</span>
+          <div class="progress-bar" id="progress-bar-25"></div>
+          <span class="time-display" id="duration-25">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="discipline-article-audio" src="https://media.redcircle.com/2025/9/29/14/d9e5b416-992e-4f36-b41e-bb889c391b69_discipline.mp3"></audio>
+  <div class="animated-text" id="discipline-article-text"></div>
+</div>
+       <!-- Hindi Articles -->
         <div class="content-card featured-article">
 <h3>हमारा जीवन, एक रणभूमि</h3>
 <div class="author-credit">-Anshika Maurya XIC</div>
@@ -2077,6 +2097,7 @@ const setupAudioText = (container, audio, textContent) => {
     setupAudioPlayer('first-home-audio', 'play-btn-17', 'progress-bar-17', 'current-time-17', 'duration-17'),
     setupAudioPlayer('forever-home-audio', 'play-btn-18', 'progress-bar-18', 'current-time-18', 'duration-18'),
     setupAudioPlayer('maa-audio', 'play-btn-23', 'progress-bar-23', 'current-time-23', 'duration-23'),
+    setupAudioPlayer('discipline-article-audio', 'play-btn-25', 'progress-bar-25', 'current-time-25', 'duration-25'),
     setupFactAudioPlayer('youngest-audio', 'youngest-play-btn', 'youngest-progress-bar', 'youngest-current-time', 'youngest-duration'),
     setupFactAudioPlayer('way-audio', 'way-play-btn', 'way-progress-bar', 'way-current-time', 'way-duration'),
     setupFactAudioPlayer('life-audio', 'life-play-btn', 'life-progress-bar', 'life-current-time', 'life-duration'),
@@ -2337,7 +2358,19 @@ const setupAudioText = (container, audio, textContent) => {
 
 प्रथम गुरु और मार्गदर्शक
 
-माँ बच्चे की पहली गुरु होती है। वह हमें बोलना, चलना और दुनिया से परिचित होना सिखाती है। माँ ही वह नींव है, जिस पर हमारे जीवन का पूरा भवन खड़ा होता है। वह केवल शारीरिक पोषण ही नहीं देती, बल्कि अपने संस्कारों के ज़रिए बच्चे के चरित्र को गढ़ती है। सही और गलत का बोध कराकर वह हमें जीवन के कठिन रास्तों पर आगे बढ़ने की शक्ति देती है.`
+माँ बच्चे की पहली गुरु होती है। वह हमें बोलना, चलना और दुनिया से परिचित होना सिखाती है। माँ ही वह नींव है, जिस पर हमारे जीवन का पूरा भवन खड़ा होता है। वह केवल शारीरिक पोषण ही नहीं देती, बल्कि अपने संस्कारों के ज़रिए बच्चे के चरित्र को गढ़ती है। सही और गलत का बोध कराकर वह हमें जीवन के कठिन रास्तों पर आगे बढ़ने की शक्ति देती है.`,
+'discipline-article-text': `
+Discipline is one of the most important qualities in life. It means doing the right thing at the right time. A disciplined person knows how to control their actions and follow a set of rules.
+
+At school, discipline means listening to teachers, completing homework on time, and respecting classmates. At home, discipline means helping parents, keeping things in order, and following good habits like brushing teeth, eating healthy food, and sleeping on time.
+
+Discipline helps us become responsible. It teaches us patience, respect, and hard work. Without discipline, there is confusion and problems. For example, if there is no traffic discipline, everyone drives as they like, and accidents happen.
+
+Great people in history achieved success because of discipline. Soldiers, doctors, teachers, and athletes all need discipline in their work. A cricketer who practices daily with discipline becomes a champion one day.
+
+As students, we should practice discipline in small things—like waking up early, being punctual, speaking politely, and being honest. These habits build our character and make us good citizens.
+
+In short, discipline is the key to success and happiness. If we learn it early in life, it will guide us forever.`
   };
 
   // Add text synchronization for articles and poems
@@ -2362,7 +2395,8 @@ const setupAudioText = (container, audio, textContent) => {
     { audioId: 'home-audio', textId: 'home-away-text' },
     { audioId: 'prakriti-audio', textId: 'prakriti-text' },
     { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
-    { audioId: 'maa-audio', textId: 'maa-text' }
+    { audioId: 'maa-audio', textId: 'maa-text' },
+    { audioId: 'discipline-article-audio', textId: 'discipline-article-text' }
   ];
   // Setup text synchronization for each audio-text pair
   textSyncElements.forEach(({ audioId, textId }) => {
