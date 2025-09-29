@@ -433,7 +433,11 @@ audio { display: none; }
 .video-card .card-content { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; padding: 1.25rem; }
 
 /* Text Synchronization */
-.poem-text, .animated-text { font-family: 'Georgia', serif; font-size: clamp(0.85rem, 3.5vw, 1rem); line-height: 1.7; margin: 1rem 0; color: var(--text-light); min-height: 100px; }
+/* Text Synchronization */
+.poem-text, .animated-text { 
+  font-family: 'Georgia', serif; font-size: clamp(0.85rem, 3.5vw, 1rem); line-height: 1.7; margin: 1rem 0; color: var(--text-light); min-height: 100px; 
+  white-space: pre-wrap; /* <-- ADDED THIS LINE */
+}
 .animated-text { display: none; }
 .animated-text.active { display: block; }
 .poem-text span, .animated-text span { display: inline-block; opacity: 0.5; transform: translateY(0); transition: all 0.3s ease; color: inherit; }
@@ -2081,6 +2085,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       हर कक्षा की यादें, हर पल सुहाना,
       स्कूल है भावी जीवन का खज़ाना।`,
+    
       'prakriti-text': `चहकते पंछी, गाती नदियाँ, सुगंधित हवा, मँडराती तितलियाँ। बहते झरने, खिली-खिली धूप, इन्द्रधनुष-सा है प्रकृति का रूप। प्रकृति, ईश्वर की अनुपम कृति, देना ही है इसकी नियति। सर्दी, गर्मी, बरसात, वसंत, सहेज लो इनको, हो रहा इनका अंत। सिमटते पर्वत, तपती धरती, कहो भला है किसकी ग़लती। कहीं अतिवृष्टि, कहीं अनावृष्टि, ख़तरे में क्यों आज सृष्टि? सुंदर फूल और मीठे फल, प्राणवायु और स्वच्छ जल। पाकर प्रकृति की ये सौगात, आओ, नाचें-गाएँ साथ। आओ वृक्ष लगाएँ हम, धरती स्वर्ग बनाएँ हम।`
   };
 
