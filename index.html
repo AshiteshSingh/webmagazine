@@ -1290,6 +1290,27 @@ audio { display: none; }
 <div class="audio-player"><div class="audio-controls"><button class="play-btn" id="play-btn-15"><i class="fas fa-play"></i></button><div class="audio-info"><div class="audio-title">The Unspoken Words</div><div class="progress-container"><span class="time-display" id="current-time-15">0:00</span><div class="progress-bar" id="progress-bar-15"></div><span class="time-display" id="duration-15">0:00</span></div></div></div></div><audio id="unspoken-audio" src="https://media.redcircle.com/2025/9/26/3/88a1c291-0e89-4edb-b2b5-71c27282e688_tripathi.mp3"></audio>
 <div class="animated-text" id="unspoken-text"></div>
 </div>
+<div class="content-card featured-article">
+  <h3>BUTTERFLY</h3>
+  <div class="author-credit">- Avya Srivastava — III A</div>
+
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button class="play-btn" id="play-btn-26"><i class="fas fa-play"></i></button>
+      <div class="audio-info">
+        <div class="audio-title">BUTTERFLY</div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time-26">0:00</span>
+          <div class="progress-bar" id="progress-bar-26"></div>
+          <span class="time-display" id="duration-26">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="butterfly-article-audio" src="https://media.redcircle.com/2025/9/29/14/8008c8c7-1ba0-463c-b73f-2d45885261ae_butterfly.mp3"></audio>
+  <div class="animated-text" id="butterfly-article-text"></div>
+</div>
 
         <div class="content-card featured-article">
 <h3>School, My First Home</h3>
@@ -2098,6 +2119,7 @@ const setupAudioText = (container, audio, textContent) => {
     setupAudioPlayer('forever-home-audio', 'play-btn-18', 'progress-bar-18', 'current-time-18', 'duration-18'),
     setupAudioPlayer('maa-audio', 'play-btn-23', 'progress-bar-23', 'current-time-23', 'duration-23'),
     setupAudioPlayer('discipline-article-audio', 'play-btn-25', 'progress-bar-25', 'current-time-25', 'duration-25'),
+    setupAudioPlayer('butterfly-article-audio', 'play-btn-26', 'progress-bar-26', 'current-time-26', 'duration-26'),
     setupFactAudioPlayer('youngest-audio', 'youngest-play-btn', 'youngest-progress-bar', 'youngest-current-time', 'youngest-duration'),
     setupFactAudioPlayer('way-audio', 'way-play-btn', 'way-progress-bar', 'way-current-time', 'way-duration'),
     setupFactAudioPlayer('life-audio', 'life-play-btn', 'life-progress-bar', 'life-current-time', 'life-duration'),
@@ -2370,7 +2392,19 @@ Great people in history achieved success because of discipline. Soldiers, doctor
 
 As students, we should practice discipline in small things—like waking up early, being punctual, speaking politely, and being honest. These habits build our character and make us good citizens.
 
-In short, discipline is the key to success and happiness. If we learn it early in life, it will guide us forever.`
+In short, discipline is the key to success and happiness. If we learn it early in life, it will guide us forever.`,
+    'butterfly-article-text': `BUTTERFLY
+
+O butterfly! O butterfly! You look so bright,
+Your wings are so colourful, soft, and light.
+
+You sit on the flowers, dance over the trees,
+Fly in the garden like a gentle breeze.
+
+You make me feel happy when I cry,
+But when I come to touch you,
+You fly and say goodbye. 🦋`
+
   };
 
   // Add text synchronization for articles and poems
@@ -2396,7 +2430,8 @@ In short, discipline is the key to success and happiness. If we learn it early i
     { audioId: 'prakriti-audio', textId: 'prakriti-text' },
     { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
     { audioId: 'maa-audio', textId: 'maa-text' },
-    { audioId: 'discipline-article-audio', textId: 'discipline-article-text' }
+    { audioId: 'discipline-article-audio', textId: 'discipline-article-text' },
+    { audioId: 'butterfly-article-audio', textId: 'butterfly-article-text' }
   ];
   // Setup text synchronization for each audio-text pair
   textSyncElements.forEach(({ audioId, textId }) => {
