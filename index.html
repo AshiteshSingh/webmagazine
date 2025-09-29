@@ -1304,6 +1304,51 @@ audio { display: none; }
   <audio id="butterfly-article-audio" src="https://media.redcircle.com/2025/9/29/14/8008c8c7-1ba0-463c-b73f-2d45885261ae_butterfly.mp3"></audio>
   <div class="animated-text" id="butterfly-article-text"></div>
 </div>
+  <!-- Honesty -->
+<div class="content-card featured-article">
+  <h3>Honesty</h3>
+  <div class="author-credit">- Shivansh — IV A</div>
+
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button class="play-btn" id="play-btn-27"><i class="fas fa-play"></i></button>
+      <div class="audio-info">
+        <div class="audio-title">Honesty</div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time-27">0:00</span>
+          <div class="progress-bar" id="progress-bar-27"></div>
+          <span class="time-display" id="duration-27">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="honesty-article-audio" src="https://media.redcircle.com/2025/9/29/16/480eeb7f-8dc6-4f8d-a26a-39dc254473e5_honesty.mp3"></audio>
+  <div class="animated-text" id="honesty-article-text"></div>
+</div>
+
+<!-- India -->
+<div class="content-card featured-article">
+  <h3>India</h3>
+  <div class="author-credit">- Gravit Agrawal — II D</div>
+
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button class="play-btn" id="play-btn-28"><i class="fas fa-play"></i></button>
+      <div class="audio-info">
+        <div class="audio-title">India</div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time-28">0:00</span>
+          <div class="progress-bar" id="progress-bar-28"></div>
+          <span class="time-display" id="duration-28">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="india-article-audio" src="https://media.redcircle.com/2025/9/29/16/a14a77b5-225e-4ea4-b132-5b6e0d9d3cf4_luvvoice.com-20250929-ydkkzu.mp3"></audio>
+  <div class="animated-text" id="india-article-text"></div>
+</div>
         <div class="content-card featured-article">
 <h3>Echoes of Truth and Light</h3>
 <div class="author-credit">-Nushika Sadhwani VI-A</div>
@@ -2103,6 +2148,8 @@ const setupAudioText = (container, audio, textContent) => {
     setupAudioPlayer('maa-audio', 'play-btn-23', 'progress-bar-23', 'current-time-23', 'duration-23'),
     setupAudioPlayer('discipline-article-audio', 'play-btn-25', 'progress-bar-25', 'current-time-25', 'duration-25'),
     setupAudioPlayer('butterfly-article-audio', 'play-btn-26', 'progress-bar-26', 'current-time-26', 'duration-26'),
+    setupAudioPlayer('honesty-article-audio', 'play-btn-27', 'progress-bar-27', 'current-time-27', 'duration-27'),
+    setupAudioPlayer('india-article-audio',   'play-btn-28', 'progress-bar-28', 'current-time-28', 'duration-28'),
     setupFactAudioPlayer('youngest-audio', 'youngest-play-btn', 'youngest-progress-bar', 'youngest-current-time', 'youngest-duration'),
     setupFactAudioPlayer('way-audio', 'way-play-btn', 'way-progress-bar', 'way-current-time', 'way-duration'),
     setupFactAudioPlayer('life-audio', 'life-play-btn', 'life-progress-bar', 'life-current-time', 'life-duration'),
@@ -2384,8 +2431,39 @@ Fly in the garden like a gentle breeze.
 
 You make me feel happy when I cry,
 But when I come to touch you,
-You fly and say goodbye. 🦋`
+You fly and say goodbye. 🦋`,
+'honesty-article-text': `Honesty
 
+There is a voice inside me
+That whispers all day long:
+"This is right for me,
+And this is wrong."
+No parents, no teachers,
+No friends, no guides,
+Can be forever by my side
+To tell what to do and what not.
+That is for me to decide.
+I will make a choice for myself
+And do what is right for me.
+Lying will tempt me, probably,
+But I shall choose honesty.`,
+
+'india-article-text': `India
+
+India, a land of wonders and might,
+Where ancient tradition shines with delight.
+From Himalayan peaks to southern seas,
+A diverse tapestry, woven with ease.
+
+With spices, colors, and vibrant sounds,
+India's spirit awakens, all around.
+From Taj Mahal's marble to Konark's stone,
+A nation's history, forever sown.
+
+In cities bustling, in villages serene,
+India's heartbeat pulses, pure and clean.
+A land of hope, of dreams, of strife,
+India, a journey through all of life.`
   };
 
   // Add text synchronization for articles and poems
@@ -2412,7 +2490,9 @@ You fly and say goodbye. 🦋`
     { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
     { audioId: 'maa-audio', textId: 'maa-text' },
     { audioId: 'discipline-article-audio', textId: 'discipline-article-text' },
-    { audioId: 'butterfly-article-audio', textId: 'butterfly-article-text' }
+    { audioId: 'butterfly-article-audio', textId: 'butterfly-article-text' },
+    { audioId: 'honesty-article-audio', textId: 'honesty-article-text' },
+    { audioId: 'india-article-audio',   textId: 'india-article-text' },
   ];
   // Setup text synchronization for each audio-text pair
   textSyncElements.forEach(({ audioId, textId }) => {
