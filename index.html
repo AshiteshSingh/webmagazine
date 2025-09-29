@@ -1284,7 +1284,29 @@ audio { display: none; }
 <div class="audio-player"><div class="audio-controls"><button class="play-btn" id="play-btn-14"><i class="fas fa-play"></i></button><div class="audio-info"><div class="audio-title">The song of a flowerite</div><div class="progress-container"><span class="time-display" id="current-time-14">0:00</span><div class="progress-bar" id="progress-bar-14"></div><span class="time-display" id="duration-14">0:00</span></div></div></div></div><audio id="flowerite-audio" src="https://media.redcircle.com/2025/9/26/3/2786e696-0f1f-422a-88f8-2810c12a45ba_shrenik.mp3"></audio>
 <div class="animated-text" id="flowerite-text"></div>
 </div>
+<div class="content-card featured-article">
+  <h3>माँ: सृष्टि की सबसे अनमोल रचना</h3>
+  <div class="author-credit">- Nabhya Srivastava -V-A</div>
 
+  <div class="audio-player">
+    <div class="audio-controls">
+      <button class="play-btn" id="play-btn-XX">
+        <i class="fas fa-play"></i>
+      </button>
+      <div class="audio-info">
+        <div class="audio-title">माँ: सृष्टि की सबसे अनमोल रचना</div>
+        <div class="progress-container">
+          <span class="time-display" id="current-time-23">0:00</span>
+          <div class="progress-bar" id="progress-bar-23"></div>
+          <span class="time-display" id="duration-23">0:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="maa-audio" src="https://media.redcircle.com/2025/9/29/12/e293d898-99e1-474e-a756-fc2e70b91e26_n_accent_narrator_pvc_sp100_s50_sb81_se32_b_m2.mp3"></audio>
+  <div class="animated-text" id="maa-text"></div>
+</div>
         <div class="content-card featured-article">
 <h3>The Unspoken Words</h3>
 <div class="author-credit">-Shivam Tripathi-XI-B</div>
@@ -2054,6 +2076,7 @@ const setupAudioText = (container, audio, textContent) => {
     setupAudioPlayer('ranbhumi-audio', 'play-btn-16', 'progress-bar-16', 'current-time-16', 'duration-16'),
     setupAudioPlayer('first-home-audio', 'play-btn-17', 'progress-bar-17', 'current-time-17', 'duration-17'),
     setupAudioPlayer('forever-home-audio', 'play-btn-18', 'progress-bar-18', 'current-time-18', 'duration-18'),
+    setupAudioPlayer('maa-audio', 'play-btn-23', 'progress-bar-23', 'current-time-23', 'duration-23'),
     setupFactAudioPlayer('youngest-audio', 'youngest-play-btn', 'youngest-progress-bar', 'youngest-current-time', 'youngest-duration'),
     setupFactAudioPlayer('way-audio', 'way-play-btn', 'way-progress-bar', 'way-current-time', 'way-duration'),
     setupFactAudioPlayer('life-audio', 'life-play-btn', 'life-progress-bar', 'life-current-time', 'life-duration'),
@@ -2307,7 +2330,14 @@ const setupAudioText = (container, audio, textContent) => {
       आओ, 
       नाचें-गाएँ साथ। 
       आओ वृक्ष लगाएँ हम, 
-      धरती स्वर्ग बनाएँ हम।`
+      धरती स्वर्ग बनाएँ हम।`,
+    'maa-text': `माँ: सृष्टि की सबसे अनमोल रचना
+
+माँ—सिर्फ दो अक्षर का यह शब्द अपने भीतर प्रेम, त्याग, समर्पण और निःस्वार्थ भावना का पूरा ब्रह्मांड समेटे हुए है। माँ इस सृष्टि की वह अनमोल रचना है, जिसे ईश्वर का दूसरा रूप कहा गया है। धरती पर माँ के आँचल की छाँव सबसे सुरक्षित ठिकाना है, जहाँ हर दुःख और चिंता दूर हो जाती है।
+
+प्रथम गुरु और मार्गदर्शक
+
+माँ बच्चे की पहली गुरु होती है। वह हमें बोलना, चलना और दुनिया से परिचित होना सिखाती है। माँ ही वह नींव है, जिस पर हमारे जीवन का पूरा भवन खड़ा होता है। वह केवल शारीरिक पोषण ही नहीं देती, बल्कि अपने संस्कारों के ज़रिए बच्चे के चरित्र को गढ़ती है। सही और गलत का बोध कराकर वह हमें जीवन के कठिन रास्तों पर आगे बढ़ने की शक्ति देती है.`
   };
 
   // Add text synchronization for articles and poems
@@ -2331,10 +2361,9 @@ const setupAudioText = (container, audio, textContent) => {
     { audioId: 'forever-home-audio', textId: 'idea-text' },
     { audioId: 'home-audio', textId: 'home-away-text' },
     { audioId: 'prakriti-audio', textId: 'prakriti-text' },
-    { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' }
+    { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
+    { audioId: 'maa-audio', textId: 'maa--text' }
   ];
-  
-
   // Setup text synchronization for each audio-text pair
   textSyncElements.forEach(({ audioId, textId }) => {
     const audioElement = document.getElementById(audioId);
