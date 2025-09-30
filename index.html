@@ -1202,10 +1202,12 @@ audio { display: none; }
 }
 
 /* Full screen backgrounds for each section */
+/* Full screen backgrounds for each section - FINAL CODE */
 #articles::before,
-#ebulletin::before, 
+#ebulletin::before,
 #poems::before,
-#paintings::before {
+#paintings::before,
+#aboutus::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1216,22 +1218,31 @@ audio { display: none; }
     background-size: cover;
     background-position: center;
     z-index: -1;
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.5s ease-in-out;
 }
 
+/* This makes the correct background visible when a section is active */
+.content-section.active::before {
+    opacity: 1;
+}
+
+/* --- Defines the specific image for each section --- */
 #articles::before {
     background-image: url('https://i.ibb.co/BKZ3Kcxp/Whats-App-Image-2025-09-29-at-09-06-58-8a2b9833.jpg');
 }
-
 #ebulletin::before {
     background-image: url('https://i.ibb.co/chvYJf1g/ebulletin.png');
 }
-
 #poems::before {
     background-image: url('https://i.ibb.co/vCSdRHTF/Gemini-Generated-Image-glaqocglaqocglaq.png');
 }
-
 #paintings::before {
     background-image: url('https://i.ibb.co/kV7K1FMF/gallery.jpg');
+}
+#aboutus::before {
+  background-image: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg');
+  filter: brightness(0.65);
 }
 </style>
 </link></link></head>
