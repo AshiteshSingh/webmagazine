@@ -973,27 +973,37 @@ audio { display: none; }
     max-width: 300px;
 }
 /* About Us Section */
+/* About Us Section - FIXED */
 #aboutus {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2.5rem;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2.5rem;
+    background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #aboutus::before {
     content: "";
-    position: absolute;  /* FIXED */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
-    filter: brightness(0.65);
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+/* Ensure content appears above the overlay */
+#aboutus .aboutus-container {
+    position: relative;
+    z-index: 1;
 }
 .aboutus-title {
   font-family: var(--heading-font);
@@ -1245,14 +1255,23 @@ audio { display: none; }
 </div>
 </section>
 <section class="page-section" id="content-page">
-<main class="main-content">
-<div class="back-to-home">
-<a href="#home"><i class="fas fa-arrow-left"></i> Back to Home</a>
-</div>
-<div class="container">
-<section class="content-section" id="articles">
-<h2 class="section-title">Articles</h2>
-<div class="article-list">
+  <main class="main-content">
+    ...
+    <!-- Remove aboutus from here -->
+  </main>
+</section>
+<!-- About Us as separate page -->
+<section class="page-section" id="aboutus">
+  <div class="aboutus-container">
+    <h2 class="aboutus-title">About Us</h2>
+    <div class="aboutus-content-box">
+      <h3>Little Flower School Gorakhpur</h3>
+      <p>Your school description and mission statement here...</p>
+      <p>Add more content about your school's history, values, achievements, etc.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Article cards go here -->
 
     <!-- Principal's Message Section -->
@@ -2016,27 +2035,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function switchContentSection(targetId) {
-        // Scroll the main page wrapper horizontally to the content page
-        pageWrapper.scrollTo({
-            left: contentPage.offsetLeft,
-            behavior: 'smooth'
+    // Special handling for About Us - it's a separate page
+    if (targetId === '#aboutus') {
+        const aboutUsPage = document.getElementById('aboutus');
+        if (aboutUsPage) {
+            pageWrapper.scrollTo({ 
+                left: aboutUsPage.offsetLeft, 
+                behavior: 'smooth' 
+            });
+        }
+        return;  // Exit early for About Us
+    }
+    
+    // Scroll the main page wrapper horizontally to the content page
+    pageWrapper.scrollTo({
+        left: contentPage.offsetLeft,
+        behavior: 'smooth'
+    });
+    
+    // Use a short delay to allow scroll to start before switching content
+    setTimeout(() => {
+        let targetFound = false;
+        contentSections.forEach(section => {
+            if ('#' + section.id === targetId) {
+                section.classList.add('active');
+                targetFound = true;
+            } else {
+                section.classList.remove('active');
+            }
         });
         
-        // Use a short delay to allow scroll to start before switching content
-        setTimeout(() => {
-            let targetFound = false;
-            contentSections.forEach(section => {
-                if ('#' + section.id === targetId) {
-                    section.classList.add('active');
-                    targetFound = true;
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-            // Fallback for safety
-            if (!targetFound) {
-                 document.getElementById('articles').classList.add('active');
-            }
+        // Fallback for safety
+        if (!targetFound) {
+            document.getElementById('articles').classList.add('active');
+        }
+    }, 500);
+    
+    // Scroll content page to the target section
+}
+
             // Scroll content page to the target section
             const targetSection = document.getElementById(targetId.substring(1));
             if (targetSection) {
