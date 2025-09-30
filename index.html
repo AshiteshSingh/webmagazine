@@ -975,26 +975,39 @@ audio { display: none; }
 /* About Us Section */
 /* About Us Section - FIXED */
 /* About Us Section - FIXED */
-/* About Us Section - FIXED */
 #aboutus {
   position: relative;
   min-height: 100vh;
-  padding: 4rem 2.5rem;
-  color: #fff; 
+  padding: 0; /* <-- REMOVE the padding here */
+  color: #fff;
 }
 
+#aboutus .aboutus-container {
+  /* Add padding here to control the content inside */
+  padding: 4rem 2.5rem; 
+  width: 100%;
+  max-width: 1140px; /* Optional: Keeps content from being too wide on large screens */
+  margin: 0 auto;
+}
 #aboutus.active {
+  /* This new rule applies the centering styles ONLY when the section is active */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-
 #aboutus::before {
-  background-image: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg');
-  filter: brightness(0.65);
+    content: "";
+    position: absolute;  /* FIXED */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: brightness(0.65);
 }
-
 .aboutus-title {
   font-family: var(--heading-font);
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -1016,13 +1029,6 @@ audio { display: none; }
   line-height: 1.7;
   margin-bottom: 1rem;
   color: rgba(255,255,255,0.95);
-}
-
-#aboutus .aboutus-container,
-#aboutus .aboutus-content-box {
-  background: transparent !important;
-  backdrop-filter: none !important;
-  box-shadow: none !important;
 }
 /* Remove About Us glass panel (scoped) */
 #aboutus .aboutus-container,
@@ -1202,12 +1208,10 @@ audio { display: none; }
 }
 
 /* Full screen backgrounds for each section */
-/* Full screen backgrounds for each section - FINAL CODE */
 #articles::before,
-#ebulletin::before,
+#ebulletin::before, 
 #poems::before,
-#paintings::before,
-#aboutus::before {
+#paintings::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1218,31 +1222,22 @@ audio { display: none; }
     background-size: cover;
     background-position: center;
     z-index: -1;
-    opacity: 0; /* Hide by default */
-    transition: opacity 0.5s ease-in-out;
 }
 
-/* This makes the correct background visible when a section is active */
-.content-section.active::before {
-    opacity: 1;
-}
-
-/* --- Defines the specific image for each section --- */
 #articles::before {
     background-image: url('https://i.ibb.co/BKZ3Kcxp/Whats-App-Image-2025-09-29-at-09-06-58-8a2b9833.jpg');
 }
+
 #ebulletin::before {
     background-image: url('https://i.ibb.co/chvYJf1g/ebulletin.png');
 }
+
 #poems::before {
     background-image: url('https://i.ibb.co/vCSdRHTF/Gemini-Generated-Image-glaqocglaqocglaq.png');
 }
+
 #paintings::before {
     background-image: url('https://i.ibb.co/kV7K1FMF/gallery.jpg');
-}
-#aboutus::before {
-  background-image: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg');
-  filter: brightness(0.65);
 }
 </style>
 </link></link></head>
@@ -1920,8 +1915,7 @@ audio { display: none; }
 </section>
 
 <!-- About Us Section -->
-
-  </div><section class="content-section" id="aboutus">
+<section class="content-section" id="aboutus">
   <div class="aboutus-container">
     <h2 class="aboutus-title">About Us</h2>
     <div class="aboutus-content-box">
