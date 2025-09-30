@@ -974,12 +974,20 @@ audio { display: none; }
 }
 /* About Us Section */
 /* About Us Section - FIXED */
+/* About Us Section - FIXED */
 #aboutus {
-  /* This rule no longer forces the section to be visible */
   position: relative;
   min-height: 100vh;
-  padding: 4rem 2.5rem;
-  color: #fff; /* Ensures text is white against the dark background */
+  padding: 0; /* <-- REMOVE the padding here */
+  color: #fff;
+}
+
+#aboutus .aboutus-container {
+  /* Add padding here to control the content inside */
+  padding: 4rem 2.5rem; 
+  width: 100%;
+  max-width: 1140px; /* Optional: Keeps content from being too wide on large screens */
+  margin: 0 auto;
 }
 #aboutus.active {
   /* This new rule applies the centering styles ONLY when the section is active */
