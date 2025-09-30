@@ -982,18 +982,20 @@ audio { display: none; }
   text-align: center;
   padding: 4rem 2.5rem;
 }
+
 #aboutus::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
-  background-attachment: fixed;
-  z-index: -1;
-  filter: brightness(0.65);
+    content: "";
+    position: absolute;  /* FIXED */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    z-index: -1;
+    filter: brightness(0.65);
 }
+.aboutus-title {
   font-family: var(--heading-font);
   font-size: clamp(2rem, 5vw, 3.5rem);
   margin: 0 0 1.5rem 0;
@@ -1193,13 +1195,10 @@ audio { display: none; }
 }
 
 /* Full screen backgrounds for each section */
-/* Full screen backgrounds for each section */
-/* Full screen backgrounds for each section - FIXED */
 #articles::before,
-#ebulletin::before,
+#ebulletin::before, 
 #poems::before,
-#paintings::before,
-#aboutus::before {
+#paintings::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1210,16 +1209,8 @@ audio { display: none; }
     background-size: cover;
     background-position: center;
     z-index: -1;
-    opacity: 0; /* Hide by default */
-    transition: opacity 0.5s ease-in-out; /* Optional: Adds a nice fade effect */
 }
 
-/* Show the background ONLY for the active section */
-.content-section.active::before {
-    opacity: 1;
-}
-
-/* --- Specific Background Images --- */
 #articles::before {
     background-image: url('https://i.ibb.co/BKZ3Kcxp/Whats-App-Image-2025-09-29-at-09-06-58-8a2b9833.jpg');
 }
@@ -1234,11 +1225,6 @@ audio { display: none; }
 
 #paintings::before {
     background-image: url('https://i.ibb.co/kV7K1FMF/gallery.jpg');
-}
-
-#aboutus::before {
-  background-image: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg');
-  filter: brightness(0.65);
 }
 </style>
 </link></link></head>
