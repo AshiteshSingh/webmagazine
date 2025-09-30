@@ -743,18 +743,48 @@ audio { display: none; }
 .zoom-nav:hover { background: #fff; transform: translateY(-50%) scale(1.1); }
 .zoom-nav.prev { left: 20px; }
 .zoom-nav.next { right: 20px; }
+/* About Us Section */
+#aboutus{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 4rem 2.5rem;
+}
 
-/* =================================================== */
-/* END: ZOOM VIEWER STYLES */
-/* =================================================== */
+#aboutus::before{a
+  content:'';
+  position: fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background:url('YOUR-BACKGROUND.jpg') center/cover no-repeat;
+  background-attachment:fixed;
+  z-index:-1;
+  filter:brightness(.65);
+}
 
-/* =================================================== */
-/* END: ANIMATED GALLERY STYLES */
-/* =================================================== */
+.aboutus-content{
+  background:rgba(0,0,0,.35);
+  backdrop-filter:blur(4px);
+  padding:2rem;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
 
-/* =================================================== */
-/* START: ARTICLE SLIDE STYLES (NEW) */
-/* =================================================== */
+.about-wrapper h3{
+  font-family:var(--heading-font);
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  margin-bottom:1rem;
+}
+
+.about-wrapper p{
+  font-size:clamp(1rem,2.4vw,1.25rem);
+  line-height:1.7;
+  margin-bottom:1rem;
+}
 .article-slide-overlay {
   position: fixed;
   top: 0;
@@ -1183,11 +1213,12 @@ audio { display: none; }
 <h1 class="hero-title">Little Flower School</h1>
 <p class="hero-subtitle">Digital Magazine 2025-26</p>
 <nav class="hero-nav">
-<a href="#articles">Articles</a>
-<a href="#ebulletin">E-Bulletin</a>
-<a href="#poems">Poems</a>
-<a href="#paintings">Paintings</a>
-<a href="#gallery">Gallery</a>
+  <a href="#articles">Articles</a>
+  <a href="#aboutus">About Us</a>
+  <a href="#ebulletin">E-Bulletin</a>
+  <a href="#poems">Poems</a>
+  <a href="#paintings">Paintings</a>
+  <a href="#gallery">Gallery</a>
 </nav>
 </div>
 </section>
@@ -1538,11 +1569,22 @@ audio { display: none; }
             </div>
         </div>
     </div>
-    
+  
     <audio id="prakriti-audio" src="https://media.redcircle.com/2025/9/28/14/5789773a-f4ee-4f33-9e3b-266cc3de7540_ishawar_ki_anupam.mp3"></audio>
     <div class="animated-text" id="prakriti-text"></div>
 </div>
 </div>
+  <!-- About Us Section -->
+<section class="content-section" id="aboutus">
+  <div class="aboutus-content">
+    <h2 class="section-title">About Us</h2>
+    <div class="about-wrapper">
+      <h3>Little Flower School Gorakhpur</h3>
+      <p>Your school description and mission statement here...</p>
+      <p>Add more content about your school's history, values, achievements, etc.</p>
+    </div>
+  </div>
+</section>
 </section>
 <section class="content-section" id="ebulletin">
 <h2 class="section-title">E-Bulletin</h2>
@@ -1861,11 +1903,12 @@ audio { display: none; }
 </div>
 <!-- NEW: FLOATING NAVIGATION BAR -->
 <nav class="floating-nav" id="floating-nav">
-<a href="#articles"><i class="fas fa-book"></i><span>Articles</span></a>
-<a href="#ebulletin"><i class="fas fa-newspaper"></i><span>E-Bulletin</span></a>
-<a href="#poems"><i class="fas fa-pencil-alt"></i><span>Poems</span></a>
-<a href="#paintings"><i class="fas fa-paint-brush"></i><span>Paintings</span></a>
-<a href="#gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
+  <a href="#articles"><i class="fas fa-book"></i><span>Articles</span></a>
+  <a href="#aboutus"><i class="fas fa-info-circle"></i><span>About Us</span></a>
+  <a href="#ebulletin"><i class="fas fa-newspaper"></i><span>E-Bulletin</span></a>
+  <a href="#poems"><i class="fas fa-pencil-alt"></i><span>Poems</span></a>
+  <a href="#paintings"><i class="fas fa-paint-brush"></i><span>Paintings</span></a>
+  <a href="#gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
 </nav>
 <div class="lightbox-overlay" id="gallery-lightbox">
 <span class="lightbox-close">×</span>
