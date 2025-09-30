@@ -973,7 +973,61 @@ audio { display: none; }
 .paintings-long-grid .grid-image-container {
     max-width: 300px;
 }
+/* About Us Section */
+#aboutus {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2.5rem;
+}
 
+#aboutus::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;  /* paste your link here */
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.65);
+}
+
+.aboutus-container {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(4px);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  max-width: 800px;
+}
+
+.aboutus-title {
+  font-family: var(--heading-font);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0 0 1.5rem 0;
+  color: #fff;
+  text-shadow: 2px 3px 6px rgba(0,0,0,0.5);
+}
+
+.aboutus-content-box h3 {
+  font-family: var(--heading-font);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.aboutus-content-box p {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: rgba(255,255,255,0.95);
+}
 </style>
 <style>
     /* Smooth scrolling optimization */
