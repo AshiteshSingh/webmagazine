@@ -828,53 +828,7 @@ audio { display: none; }
 /* =================================================== */
 
 /* NEW: FLOATING NAVIGATION BAR STYLES */
-.floating-nav {
-  position: fixed;
-  bottom: -100px; /* Start off-screen */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-around;
-  padding: 0.75rem 1.5rem;
-  z-index: 999;
-  transition: bottom 0.5s ease-out;
-}
 
-.floating-nav.visible {
-  bottom: 20px;
-}
-
-.floating-nav a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--text-gray);
-  font-size: 0.75rem;
-  font-weight: 600;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.floating-nav a i {
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-  transition: color 0.3s ease;
-}
-
-.floating-nav a.active {
-  color: var(--accent-blue);
-  transform: scale(1.1);
-}
-
-.floating-nav a:hover {
-  color: var(--accent-blue);
-}
 
 /* =================================================== */
 /* START: MOBILE-SPECIFIC OPTIMIZATIONS */
@@ -984,16 +938,16 @@ audio { display: none; }
 }
 
 #aboutus::before {
-    content: "";
-    position: absolute;  /* FIXED */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;
-    background-attachment: fixed;
-    z-index: -1;
-    filter: brightness(0.65);
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://i.ibb.co/dJfw6JSp/sld-2.jpg') center/cover no-repeat;  /* paste your link here */
+  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(0.65);
 }
 .aboutus-title {
   font-family: var(--heading-font);
@@ -1926,14 +1880,6 @@ audio { display: none; }
 </section>
 </div>
 <!-- NEW: FLOATING NAVIGATION BAR -->
-<nav class="floating-nav" id="floating-nav">
-    <a href="#articles"><i class="fas fa-book"></i><span>Articles</span></a>
-    <a href="#ebulletin"><i class="fas fa-newspaper"></i><span>E-Bulletin</span></a>
-    <a href="#poems"><i class="fas fa-pencil-alt"></i><span>Poems</span></a>
-    <a href="#paintings"><i class="fas fa-paint-brush"></i><span>Paintings</span></a>
-    <a href="#gallery"><i class="fas fa-images"></i><span>Gallery</span></a>
-    <a href="#aboutus"><i class="fas fa-info-circle"></i><span>About Us</span></a>
-  </nav>
 <div class="lightbox-overlay" id="gallery-lightbox">
 <span class="lightbox-close">×</span>
 <div class="lightbox-content">
@@ -1975,89 +1921,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.querySelector('.main-content');
     const homeLink = document.querySelector('.back-to-home a');
     const contentSections = document.querySelectorAll('.content-section');
-    const floatingNav = document.getElementById('floating-nav');
-    const floatingNavLinks = floatingNav.querySelectorAll('a');
-
-    const updateFloatingNav = () => {
-        const contentPageRect = contentPage.getBoundingClientRect();
-        if (contentPageRect.left <= 0 && contentPageRect.right > 0) {
-            floatingNav.classList.add('visible');
-        } else {
-            floatingNav.classList.remove('visible');
-        }
-
-        // Highlight active link based on scroll position
-        const currentScrollY = contentPage.scrollTop + 100;
-        contentSections.forEach(section => {
-            const sectionRect = section.getBoundingClientRect();
-            const floatingNavLink = floatingNav.querySelector(`a[href="#${section.id}"]`);
-            if (floatingNavLink) {
-                if (sectionRect.top <= 100 && sectionRect.bottom > 100) {
-                    floatingNavLink.classList.add('active');
-                } else {
-                    floatingNavLink.classList.remove('active');
-                }
-            }
-        });
-    };
-
-    pageWrapper.addEventListener('scroll', updateFloatingNav);
-    contentPage.addEventListener('scroll', updateFloatingNav);
-
-    // Show articles section by default when content page is loaded/scrolled to
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            if (!document.querySelector('.content-section.active')) {
-                document.getElementById('articles').classList.add('active');
-            }
-        }
-    }, { threshold: 0.1 });
-    observer.observe(contentPage);
-
-
-    function switchContentSection(targetId) {
-        // Scroll the main page wrapper horizontally to the content page
-        pageWrapper.scrollTo({
-            left: contentPage.offsetLeft,
-            behavior: 'smooth'
-        });
-        
-        // Use a short delay to allow scroll to start before switching content
-        setTimeout(() => {
-            let targetFound = false;
-            contentSections.forEach(section => {
-                if ('#' + section.id === targetId) {
-                    section.classList.add('active');
-                    targetFound = true;
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-            // Fallback for safety
-            if (!targetFound) {
-                 document.getElementById('articles').classList.add('active');
-            }
-            // Scroll content page to the target section
-            const targetSection = document.getElementById(targetId.substring(1));
-            if (targetSection) {
-                 contentPage.scrollTo({
-                     top: targetSection.offsetTop,
-                     behavior: 'smooth'
-                 });
-            } else {
-                 contentPage.scrollTop = 0;
-            }
-        }, 100);
-    }
-
-    heroNavLinks.forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            switchContentSection(targetId);
-        });
-    });
-
+  
     floatingNavLinks.forEach(link => {
         link.addEventListener('click', e => {
             e.preventDefault();
