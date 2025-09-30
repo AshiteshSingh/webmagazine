@@ -1016,19 +1016,21 @@ audio { display: none; }
   text-shadow: 2px 3px 6px rgba(0,0,0,0.5);
 }
 
-.aboutus-content-box h3 {
+.aboutus-content-box h4 {
   font-family: var(--heading-font);
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 1rem;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-size: clamp(1.3rem, 3vw, 1.6rem); /* Sets a responsive size for the headings */
+  color: var(--accent-gold); /* Uses the gold accent color to make headings stand out */
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .aboutus-content-box p {
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  /* --- This is the key change --- */
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* Increased the font sizes */
   line-height: 1.7;
   margin-bottom: 1rem;
   color: rgba(255,255,255,0.95);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Added a subtle shadow for readability */
 }
 /* Remove About Us glass panel (scoped) */
 #aboutus .aboutus-container,
@@ -1929,13 +1931,13 @@ audio { display: none; }
       <h4 style="margin-top: 2rem;">Development Team</h4>
       <div style="text-align: left; max-width: 700px; margin: 1rem auto; padding: 1rem 0; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);">
         <p><strong>Ashitesh Kumar Singh (Class XI-D) | Website Developer</strong></p>
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
+        <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
           Specializing in Python, Machine Learning, and Generative AI. Responsible for core development and feature implementation.
         </p>
         <hr style="border-color: rgba(255,255,255,0.1); margin: 1rem 0;">
-        <p><strong>Aashay Singh | Quality Assurance & Multimedia Editor</strong></p>
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
-          Specializing in Java. Responsible for testing, bug identification, and all video and photo editing.
+        <p><strong>Aashay Singh(Class XI-B) | Quality Assurance & Multimedia Editor</strong></p>
+        <p style="color: rgba(255,255,255,0.9); margin-top: 0.5rem;">
+          Specialized in Java. Responsible for testing, bug identification, and all video and photo editing.
         </p>
       </div>
 
@@ -1948,7 +1950,6 @@ audio { display: none; }
     </div>
   </div>
 </section>
-
 <!-- Thank You / Outro -->
 <section class="content-section" id="outro">
   <div class="outro-wrap">
