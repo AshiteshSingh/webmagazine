@@ -2245,7 +2245,8 @@ else {
   }
 
   // Fact Audio Player Setup Function
-  function setupFactAudioPlayer(audioId, playBtnId, progressBarId, currentTimeId, durationId, progressColor = 'var(--therese-rose)') {
+  // REPLACE THE OLD FUNCTION WITH THIS NEW ONE
+function setupFactAudioPlayer(audioId, playBtnId, progressBarId, currentTimeId, durationId, progressColor = 'var(--therese-rose)') {
     const audio = document.getElementById(audioId);
     const playBtn = document.getElementById(playBtnId);
     const progressBar = document.getElementById(progressBarId);
@@ -2273,14 +2274,25 @@ else {
         progressBar.style.background = `linear-gradient(to right, ${progressColor} ${progress}%, #d1d1d1 ${progress}%)`;
       }
     });
-    audio.addEventListener('loadedmetadata', () => { if (durationDisplay) durationDisplay.textContent = formatTime(audio.duration); });
+
+    const setDuration = () => {
+        if (audio.duration && durationDisplay) {
+            durationDisplay.textContent = formatTime(audio.duration);
+        }
+    };
+    if (audio.readyState > 0) {
+        setDuration();
+    } else {
+        audio.addEventListener('loadedmetadata', setDuration);
+    }
+
     progressBar.addEventListener('click', (e) => {
       e.stopPropagation();
       const rect = progressBar.getBoundingClientRect();
       audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
     });
     return { audio, togglePlay, isPlaying: () => isPlaying };
-  }
+}
 
   // **OPTIMIZED** Text Synchronization Function
  // Build synchronized text while preserving stanza breaks
