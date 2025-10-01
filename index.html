@@ -1213,8 +1213,7 @@ audio { display: none; }
 #articles::before,
 #ebulletin::before, 
 #poems::before,
-#paintings::before
-#gallery::before {
+#paintings::before {
     content: '';
     position: fixed;
     top: 0;
@@ -1241,9 +1240,6 @@ audio { display: none; }
 
 #paintings::before {
     background-image: url('https://i.ibb.co/kV7K1FMF/gallery.jpg');
-}
-#gallery::before {
-    background-image: url('https://i.ibb.co/WW940r7x/Gemini-Generated-Image-sncugusncugusncu.png');
 }
 </style>
 </link></link></head>
@@ -2672,30 +2668,32 @@ India, a journey through all of life.`
   };
 
   // Add text synchronization for articles and poems
-const textSyncElements = [
+  const textSyncElements = [
+    { audioId: 'flowerite-audio', textId: 'flowerite-text' },
     { audioId: 'unspoken-audio', textId: 'unspoken-text' },
-    { audioId: 'butterfly-article-audio', textId: 'butterfly-article-text' },
-    { audioId: 'honesty-article-audio', textId: 'honesty-article-text' },
-    { audioId: 'india-article-audio', textId: 'india-article-text' },
+    { audioId: 'ranbhumi-audio', textId: 'ranbhumi-text' },
+    { audioId: 'first-home-audio', textId: 'first-home-text' },
     { audioId: 'echoes-audio', textId: 'echoes-text' },
+    { audioId: 'hindi-poem-2-audio', textId: 'hindi-poem-2-text' },
+    { audioId: 'hindi-shastri-audio', textId: 'hindi-shastri-text' },
     { audioId: 'peach-tree-audio', textId: 'peach-tree-text' },
     { audioId: 'shastri-audio', textId: 'shastri-article-text' },
     { audioId: 'prayer-audio', textId: 'prayer-text' },
     { audioId: 'gandhi-audio', textId: 'gandhi-article' },
     { audioId: 'audio', textId: 'animated-article' },
-    { audioId: 'forever-home-audio', textId: 'idea-text' },
-    { audioId: 'discipline-article-audio', textId: 'discipline-article-text' },
-    { audioId: 'ranbhumi-audio', textId: 'ranbhumi-text' },
-    { audioId: 'maa-audio', textId: 'maa-text' },
-    { audioId: 'hindi-poem-2-audio', textId: 'hindi-poem-2-text' },
-    { audioId: 'hindi-shastri-audio', textId: 'hindi-shastri-text' },
-    { audioId: 'home-audio', textId: 'home-away-text' },
-    { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
-    { audioId: 'prakriti-audio', textId: 'prakriti-text' },
     { audioId: 'hindi-poem-audio', textId: 'hindi-poem-text' },
     { audioId: 'karmayuddh-audio', textId: 'karmayuddh-text' },
     { audioId: 'hindi-article-audio', textId: 'hindi-article-text' },
-    { audioId: 'poem-audio', textId: 'poem-text' }
+    { audioId: 'poem-audio', textId: 'poem-text' },
+    { audioId: 'forever-home-audio', textId: 'idea-text' },
+    { audioId: 'home-audio', textId: 'home-away-text' },
+    { audioId: 'prakriti-audio', textId: 'prakriti-text' },
+    { audioId: 'mera-pyaar-school-audio', textId: 'mera-pyaar-school-text' },
+    { audioId: 'maa-audio', textId: 'maa-text' },
+    { audioId: 'discipline-article-audio', textId: 'discipline-article-text' },
+    { audioId: 'butterfly-article-audio', textId: 'butterfly-article-text' },
+    { audioId: 'honesty-article-audio', textId: 'honesty-article-text' },
+    { audioId: 'india-article-audio',   textId: 'india-article-text' },
   ];
   // Setup text synchronization for each audio-text pair
   textSyncElements.forEach(({ audioId, textId }) => {
