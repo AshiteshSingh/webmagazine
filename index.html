@@ -2220,7 +2220,21 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.background = `linear-gradient(to right, var(--accent-blue) ${progress}%, #ced4da ${progress}%)`;
       }
     });
-    audio.addEventListener('loadedmetadata', () => { if (durationDisplay) durationDisplay.textContent = formatTime(audio.duration); });
+    // ADD THIS NEW BLOCK
+const setDuration = () => {
+    if (audio.duration && durationDisplay) {
+        durationDisplay.textContent = formatTime(audio.duration);
+    }
+};
+
+// Check if metadata is already loaded. If so, set the duration.
+if (audio.readyState > 0) {
+    setDuration();
+} 
+// Otherwise, wait for the event to happen.
+else {
+    audio.addEventListener('loadedmetadata', setDuration);
+}
     progressBar.addEventListener('click', (e) => {
       e.stopPropagation();
       const rect = progressBar.getBoundingClientRect();
