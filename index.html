@@ -1043,11 +1043,22 @@ audio { display: none; }
 }
 </style>
 <style>
+    /* NEW: Reusable style for prose articles to ensure readability */
+    .prose-style p {
+        color: #212529 !important; /* Dark text for readability */
+        font-size: 1.1rem !important; /* Larger font size */
+        line-height: 1.7 !important;  /* Better line spacing */
+        margin-bottom: 1rem;
+    }
+
+    .prose-style .author-credit {
+        color: #495057; /* Dark gray for the signature */
+    }
+
     /* Smooth scrolling optimization */
     html {
         scroll-behavior: smooth;
     }
-
     /* Image lazy loading fade-in */
     img[loading="lazy"] {
         transition: opacity 0.3s ease;
