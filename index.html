@@ -925,13 +925,97 @@ audio { display: none; }
   .zoom-nav.prev { left: 10px; }
   .zoom-nav.next { right: 10px; }
 }
-/* =================================================== */
-/* END: MOBILE-SPECIFIC OPTIMIZATIONS */
-/* =================================================== */
-
-
-
-
+/* Fix for very small mobile devices */
+@media (max-width: 480px) {
+  /* Reduce gallery arrow button sizes */
+  .gallery-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    padding: 0;
+  }
+  
+  .gallery-arrow.left { 
+    left: 2px; 
+  }
+  
+  .gallery-arrow.right { 
+    right: 2px; 
+  }
+  
+  /* Reduce zoom navigation button sizes */
+  .zoom-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  
+  .zoom-nav.prev { 
+    left: 5px; 
+  }
+  
+  .zoom-nav.next { 
+    right: 5px; 
+  }
+  
+  /* Reduce zoom control buttons */
+  .zoom-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  /* Reduce play buttons */
+  .play-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  
+  .fact-play-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    font-size: 0.85rem;
+  }
+  
+  /* Ensure article close button is not overlapping */
+  .article-slide-close {
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 360px) {
+  .gallery-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  
+  .zoom-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+  
+  .zoom-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+  
+  .play-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .fact-play-btn {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+}
 .paintings-content {
     position: relative;
     z-index: 2;
