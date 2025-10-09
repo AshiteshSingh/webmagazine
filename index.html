@@ -144,6 +144,61 @@ body {
   border-color: #fff;
   transform: translateY(-3px);
 }
+/* PASTE THIS ENTIRE BLOCK TO ANIMATE THE TEXT */
+
+/* 1. This is the new animation definition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px lower than normal */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at its normal position */
+  }
+}
+
+/* 2. Remove the old animation from the container */
+.hero-content {
+  animation: none; /* This stops the whole block from animating at once */
+}
+
+/* 3. Apply the new animation to each element with a delay */
+
+/* The main title */
+.hero-title {
+  /* Animation properties */
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; /* Keeps it visible after animating */
+  animation-timing-function: ease-out;
+  
+  /* Start invisible */
+  opacity: 0;
+  
+  /* Delay before it starts */
+  animation-delay: 0.5s; 
+}
+
+/* The subtitles */
+.hero-subtitle {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  opacity: 0;
+  animation-delay: 0.8s; /* Starts 0.3s after the title */
+}
+
+/* The navigation buttons */
+.hero-nav {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  opacity: 0;
+  animation-delay: 1.1s; /* Starts 0.3s after the subtitle */
+}
 /* Main Content Area (Second Page) */
 .main-content {
     padding: 4rem 2.5rem;
