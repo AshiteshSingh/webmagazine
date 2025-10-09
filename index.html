@@ -65,8 +65,22 @@ body {
 }
 
 /* Hero Section (First Page) */
+/* PASTE THIS ENTIRE BLOCK */
+#hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Hero Section (First Page) */
 .hero-section {
-  background: url('https://i.ibb.co/HfhCrp7D/Gemini-Generated-Image-lez3xmlez3xmlez3-min.jpg') center center/cover no-repeat;
+  position: relative; 
+  overflow: hidden; 
   min-height: 100vh;
   background-position: center top;
   display: flex;
@@ -81,11 +95,12 @@ body {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.3); /* Overlay for readability */
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 2; 
 }
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3; 
   animation: fadeInScaleUp 1s ease-out;
 }
 @keyframes fadeInScaleUp {
@@ -129,7 +144,6 @@ body {
   border-color: #fff;
   transform: translateY(-3px);
 }
-
 /* Main Content Area (Second Page) */
 .main-content {
     padding: 4rem 2.5rem;
@@ -1353,11 +1367,17 @@ audio { display: none; }
 <body>
 <div class="page-wrapper">
 <section class="page-section hero-section" id="home">
-<div class="hero-content">
-<h1 class="hero-title">Little Flower School Gorakhpur</h1>
-<p class="hero-subtitle">Digital Magazine 2025-26</p>
-<p class="hero-subtitle">1st Oct – Little Flower Day | 2nd Oct – Gandhi Jayanti  … Love, Peace & Simplicity.</p>
-<nav class="hero-nav">
+
+  <video autoplay muted loop playsinline id="hero-video">
+    <source src="https://res.cloudinary.com/dbrms9tkt/video/upload/v1760007115/High_Tech_Professional_Background_Video_Creation_xwbf1t.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Little Flower School Gorakhpur</h1>
+    <p class="hero-subtitle">Digital Magazine 2025-26</p>
+    <p class="hero-subtitle">1st Oct – Little Flower Day | 2nd Oct – Gandhi Jayanti  … Love, Peace & Simplicity.</p>
+    <nav class="hero-nav">
       <a href="#articles">Articles</a>
       <a href="#ebulletin">E-Bulletin</a>
       <a href="#poems">Poems</a>
@@ -1365,7 +1385,7 @@ audio { display: none; }
       <a href="#gallery">Gallery</a>
       <a href="#aboutus">About Us</a>
     </nav>
-</div>
+  </div>
 </section>
 <section class="page-section" id="content-page">
 <main class="main-content">
